@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "prod": "webpack --env=prod",
-    "dev": "webpack --env=dev"
+    "dev": "webpack-dev-server --env=dev"
   },
   "dependencies": {
     "react": "^16.0.0",
