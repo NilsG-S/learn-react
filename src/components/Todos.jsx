@@ -9,21 +9,21 @@ import {
 function Todos(props) {
   return (
     <List>
-      {props.todo.map((todo, key) => {
-        return (
-          <List.Item
-            key={key}
-          >
-            {todo}
-          </List.Item>
-        );
-      })}
+      {props.todo.map(todo => (
+        <List.Item
+          key={todo.id}
+        >
+          {todo.text}
+        </List.Item>))}
     </List>
   );
 }
 
 Todos.propTypes = {
-  todo: PropTypes.arrayOf(PropTypes.string).isRequired,
+  todo: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 function mapStateToProps(state) {

@@ -4,9 +4,12 @@ export const ADD = 'ADD';
 
 // action creators
 
-export function addTodo(item) {
+let nextTodoId = 0;
+export function addTodo(text) {
+  nextTodoId += 1;
   return {
     type: ADD,
-    item,
+    id: nextTodoId,
+    text,
   };
 }
