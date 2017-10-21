@@ -8,6 +8,7 @@ import {
   Button,
 } from 'semantic-ui-react';
 
+// TODO(NilsG-S): Separate list item out into separate component w/ functionality
 function Todos(props) {
   return (
     <Container text textAlign='left' style={{ marginTop: '1em' }}>

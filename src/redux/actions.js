@@ -13,3 +13,5 @@ export function addTodo(text) {
     text,
   };
 }
+
+// Make action to complete item
