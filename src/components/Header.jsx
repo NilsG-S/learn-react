@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import {
   Menu,
   Container,
   Input,
   Button,
 } from 'semantic-ui-react';
+
+import { addTodo } from 'redux/actions.js';
 
 class Header extends React.Component {
   constructor(props) {
@@ -25,7 +28,7 @@ class Header extends React.Component {
   }
 
   add() {
-    this.props.add(this.state.todo);
+    this.props.dispatch(addTodo(this.state.todo));
   }
 
   render() {
@@ -62,7 +65,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  add: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default Header;
