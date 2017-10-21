@@ -6,6 +6,7 @@ import {
 } from 'semantic-ui-react';
 
 import Header from './components/Header.jsx';
+import Todos from './components/Todos.jsx';
 import store from './redux/store.js';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     <Provider store={store}>
       <Container text textAlign='center'>
         <Header />
-        This is a test.
+        <Todos />
       </Container>
     </Provider>
   );
