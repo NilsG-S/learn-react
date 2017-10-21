@@ -8,8 +8,8 @@ import Header from './components/Header.jsx';
 function App() {
   return (
     <div>
-      <Header />
-      <Container>
+      <Container text textAlign='center'>
+        <Header />
         This is a test.
       </Container>
     </div>
