@@ -3,19 +3,29 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import {
+  Container,
   List,
+  Button,
 } from 'semantic-ui-react';
 
 function Todos(props) {
   return (
-    <List>
-      {props.todo.map(todo => (
-        <List.Item
-          key={todo.id}
-        >
-          {todo.text}
-        </List.Item>))}
-    </List>
+    <Container text textAlign='left' style={{ marginTop: '1em' }}>
+      <List divided verticalAlign='middle'>
+        {props.todo.map(todo => (
+          <List.Item
+            key={todo.id}
+          >
+            <List.Content floated='right'>
+              <Button icon='delete' />
+            </List.Content>
+            <List.Content>
+              <Button icon='check' />
+              {todo.text}
+            </List.Content>
+          </List.Item>))}
+      </List>
+    </Container>
   );
 }
 

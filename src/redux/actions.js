@@ -4,7 +4,7 @@ export const ADD = 'ADD';
 
 // action creators
 
-let nextTodoId = 0;
+let nextTodoId = -1;
 export function addTodo(text) {
   nextTodoId += 1;
   return {
