@@ -1,6 +1,7 @@
 // action types
 
 export const ADD = 'ADD';
+export const TOGGLE = 'TOGGLE';
 
 // action creators
 
@@ -14,4 +15,9 @@ export function addTodo(text) {
   };
 }
 
-// TODO(NilsG-S): Make action to complete item
+export function toggleTodo(id) {
+  return {
+    type: TOGGLE,
+    id,
+  };
+}
