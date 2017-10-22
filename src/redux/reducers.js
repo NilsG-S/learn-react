@@ -3,6 +3,7 @@ import { combineReducers } from 'redux-immutable';
 
 import {
   ADD,
+  DELETE,
   TOGGLE,
 } from './actions.js';
 
@@ -13,6 +14,8 @@ function todo(state = OrderedMap(), action) {
         text: action.text,
         completed: false,
       });
+    case DELETE:
+      return state.delete(action.id);
     case TOGGLE: {
       const current = state.get(action.id);
 

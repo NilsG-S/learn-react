@@ -1,6 +1,7 @@
 // action types
 
 export const ADD = 'ADD';
+export const DELETE = 'DELETE';
 export const TOGGLE = 'TOGGLE';
 
 // action creators
@@ -12,6 +13,13 @@ export function addTodo(text) {
     type: ADD,
     id: nextTodoId,
     text,
+  };
+}
+
+export function deleteTodo(id) {
+  return {
+    type: DELETE,
+    id,
   };
 }
 
