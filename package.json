@@ -9,11 +9,13 @@
     "dev": "webpack-dev-server --env=dev"
   },
   "dependencies": {
+    "immutable": "^3.8.2",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
+    "redux-immutable": "^4.0.0",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.75.1"
   },

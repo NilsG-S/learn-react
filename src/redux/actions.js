@@ -14,4 +14,4 @@ export function addTodo(text) {
   };
 }
 
-// Make action to complete item
+// TODO(NilsG-S): Make action to complete item

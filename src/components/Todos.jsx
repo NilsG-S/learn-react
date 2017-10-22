@@ -13,16 +13,16 @@ function Todos(props) {
   return (
     <Container text textAlign='left' style={{ marginTop: '1em' }}>
       <List divided verticalAlign='middle'>
-        {props.todo.map(todo => (
+        {[...props.todo.entries()].map(todo => (
           <List.Item
-            key={todo.id}
+            key={todo[0]}
           >
             <List.Content floated='right'>
               <Button icon='delete' />
             </List.Content>
             <List.Content>
               <Button icon='check' />
-              {todo.text}
+              {todo[1].text}
             </List.Content>
           </List.Item>))}
       </List>
@@ -31,15 +31,14 @@ function Todos(props) {
 }
 
 Todos.propTypes = {
-  todo: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-  })).isRequired,
+  todo: PropTypes.shape({
+    entries: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 function mapStateToProps(state) {
   return {
-    todo: state.todo,
+    todo: state.get('todo'),
   };
 }
 
