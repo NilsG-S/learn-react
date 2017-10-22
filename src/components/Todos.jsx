@@ -16,7 +16,9 @@ function Todos(props) {
         {[...props.todo.entries()].map(todo => (
           <Todo
             key={todo[0]}
+            id={todo[0]}
             text={todo[1].text}
+            checked={todo[1].completed}
           />))}
       </List>
     </Container>
