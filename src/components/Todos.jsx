@@ -5,26 +5,19 @@ import { connect } from 'react-redux';
 import {
   Container,
   List,
-  Button,
 } from 'semantic-ui-react';
 
-// TODO(NilsG-S): Separate list item out into separate component w/ functionality
+import Todo from './Todo.jsx';
+
 function Todos(props) {
   return (
     <Container text textAlign='left' style={{ marginTop: '1em' }}>
       <List divided verticalAlign='middle'>
         {[...props.todo.entries()].map(todo => (
-          <List.Item
+          <Todo
             key={todo[0]}
-          >
-            <List.Content floated='right'>
-              <Button icon='delete' />
-            </List.Content>
-            <List.Content>
-              <Button icon='check' />
-              {todo[1].text}
-            </List.Content>
-          </List.Item>))}
+            text={todo[1].text}
+          />))}
       </List>
     </Container>
   );
